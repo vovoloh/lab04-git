@@ -1,13 +1,20 @@
 #include <iostream>
 #include <string>
 
-int main() {
-    // Запрашиваем имя пользователя с клавиатуры.
-    std::string name;
-    std::cout << "Enter your name: ";
-    std::getline(std::cin, name);
+int
+main()
+{
+  // Считываем имя целиком, включая пробелы.
+  std::string name;
+  std::cout << "Введите имя: ";
+  std::getline(std::cin, name);
 
-    // Печатаем приветствие, персонализированное по имени.
-    std::cout << "Hello world from @" << name << '\n';
-    return 0;
+  if (name.empty()) {
+    std::cerr << "Имя не должно быть пустым.\n";
+    return 1;
+  }
+
+  // Формируем приветствие с именем пользователя.
+  std::cout << "Hello world from @" << name << '\n';
+  return 0;
 }
