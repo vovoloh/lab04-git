@@ -2,12 +2,12 @@
 #include <string>
 
 int main() {
-    // Считываем имя пользователя.
+    // Запрашиваем имя пользователя с клавиатуры.
     std::string name;
     std::cout << "Enter your name: ";
     std::getline(std::cin, name);
 
-    // Выводим персональное приветствие.
+    // Печатаем приветствие, персонализированное по имени.
     std::cout << "Hello world from @" << name << '\n';
     return 0;
 }
